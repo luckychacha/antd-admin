@@ -4,7 +4,8 @@ const { menus } = api
 
 export async function query (params) {
   return request({
-    url: menus,
+    //url: menus,
+    url: 'http://172.16.8.2/res.php',
     method: 'get',
     data: params,
   })

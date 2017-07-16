@@ -5,7 +5,7 @@ let database = [
   {
     id: '1',
     icon: 'laptop',
-    name: 'Dashboard',
+    name: 'Dashboard2',
     route: '/dashboard',
   },
   {
