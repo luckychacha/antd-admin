@@ -132,6 +132,13 @@ const Routers = function ({ history, app }) {
             }, 'post')
           },
         }, {
+          path: 'tools/rsaTool',
+          getComponent (nextState, cb) {
+            require.ensure([], require => {
+              cb(null, require('./routes/tools/rsaTool/'))
+            }, 'tools-rsaTool')
+          },
+        }, {
           path: '*',
           getComponent (nextState, cb) {
             require.ensure([], require => {
