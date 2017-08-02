@@ -1,9 +1,26 @@
 import React from 'react'
+import RsaComponent from './RsaComponent'
 
-const RsaTool = () => (
-    <div className="content-inner">
-        rsatool
-    </div>
-)
+const RsaTool = () => {
+
+    const rsaProps = {
+
+        onCheck (publicKey, privateKey) {
+            alert(2)
+        },
+
+        onReset () {
+            alert(1);
+        }
+    }
+
+    return (
+        <div className="content-inner">
+            aaa
+            <RsaComponent/>
+            bbb
+        </div>
+    )
+}
 
 export default RsaTool
