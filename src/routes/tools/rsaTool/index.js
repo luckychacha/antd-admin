@@ -6,19 +6,17 @@ const RsaTool = () => {
     const rsaProps = {
 
         onCheck (publicKey, privateKey) {
-            alert(2)
+            alert('校验');
         },
 
         onReset () {
-            alert(1);
+            alert('重置');
         }
     }
 
     return (
         <div className="content-inner">
-            aaa
-            <RsaComponent/>
-            bbb
+            <RsaComponent {...rsaProps} />
         </div>
     )
 }
