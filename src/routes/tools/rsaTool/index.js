@@ -6,12 +6,14 @@ const RsaTool = () => {
     const rsaProps = {
 
         onCheck (publicKey, privateKey) {
-            alert('校验');
+            console.log(privateKey);
+            console.log(publicKey);
         },
 
         onReset () {
             alert('重置');
-        }
+        },
+
     }
 
     return (
