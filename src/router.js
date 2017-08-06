@@ -135,6 +135,7 @@ const Routers = function ({ history, app }) {
           path: 'tools/rsaTool',
           getComponent (nextState, cb) {
             require.ensure([], require => {
+              registerModel(app, require('./models/tools/rsatool'))
               cb(null, require('./routes/tools/rsaTool/'))
             }, 'tools-rsaTool')
           },

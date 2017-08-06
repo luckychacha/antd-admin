@@ -1,19 +1,53 @@
-import React from 'react'
-import RsaComponent from './RsaComponent'
+import React from 'react';
+import RsaComponent from './RsaComponent';
+import { connect } from 'dva';
 
-const RsaTool = () => {
+const RsaTool = ({
+  dispatch,
+  rsatool
+}) => {
+
+    const {
+      publicKey,
+      privateKey,
+      checkLoading,
+      checkResult,
+      showCheckResult,
+    } = rsatool
 
     const rsaProps = {
 
         onCheck (publicKey, privateKey) {
-            console.log(privateKey);
-            console.log(publicKey);
+
+            const payload = {
+              'publicKey': publicKey,
+              'privateKey': privateKey
+            }
+
+            dispatch({ type: 'rsatool/checkRSA', payload })
         },
 
         onReset () {
-            alert('重置');
+            const payload = {
+              publicKey: '',
+              privateKey: '',
+              checkLoading: false,
+              showCheckResult: false,
+              checkResult: false,
+            }
+
+            dispatch({ type: 'rsatool/resetKeys', payload})
         },
 
+        resetShowResult () {
+          dispatch({ type: 'rsatool/resetShowResult'})
+        },
+
+        publicKey,
+        privateKey,
+        checkLoading,
+        checkResult,
+        showCheckResult,
     }
 
     return (
@@ -23,4 +57,4 @@ const RsaTool = () => {
     )
 }
 
-export default RsaTool
+export default connect( ({rsatool}) => ({rsatool}) )(RsaTool)
