@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Slider, Input, Button, Form, message } from 'antd';
 import { connect } from 'dva';
+import PropTypes from 'prop-types'
 
 const FormItem = Form.Item
 
@@ -83,6 +84,17 @@ const RsaComponent = ({
             </Form>
         </div>
     )
+}
+
+RsaComponent.propTypes = {
+    onCheck: PropTypes.func,
+    onReset: PropTypes.func,
+    resetShowResult: PropTypes.func,
+    checkLoading: PropTypes.func,
+    publicKey: PropTypes.string,
+    privateKey: PropTypes.string,
+    showCheckResult: PropTypes.bool,
+    checkResult: PropTypes.bool,
 }
 
 export default Form.create()(RsaComponent)

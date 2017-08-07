@@ -9,6 +9,8 @@ import * as Layout from './Layout/index.js'
 
 import layer from './layer'
 
+import RsaComponent from './RsaComponent/RsaComponent'
+
 export {
   Layout,
   DataTable,
@@ -19,4 +21,5 @@ export {
   FilterItem,
   Loader,
   layer,
+  RsaComponent,
  }

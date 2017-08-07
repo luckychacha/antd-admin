@@ -1,19 +1,11 @@
 import React from 'react';
-import RsaComponent from './RsaComponent';
 import { connect } from 'dva';
+import { RsaComponent } from 'components';
 
 const RsaTool = ({
   dispatch,
   rsatool
 }) => {
-
-    const {
-      publicKey,
-      privateKey,
-      checkLoading,
-      checkResult,
-      showCheckResult,
-    } = rsatool
 
     const rsaProps = {
 
@@ -43,11 +35,7 @@ const RsaTool = ({
           dispatch({ type: 'rsatool/resetShowResult'})
         },
 
-        publicKey,
-        privateKey,
-        checkLoading,
-        checkResult,
-        showCheckResult,
+        ...rsatool
     }
 
     return (

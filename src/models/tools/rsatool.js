@@ -26,13 +26,13 @@ export default {
 			payload.publicKey = payload.publicKey.replace(/\+/g, "%2B").replace(/\&/g, "%26");
 
   		yield put({ type: 'setKeys', payload })
-			const str = 'privateKey=' + payload.privateKey + '&publicKey=' + payload.publicKey;
 
+			const str = 'privateKey=' + payload.privateKey + '&publicKey=' + payload.publicKey;
 			yield put ({ type: 'showLoading' })
   		const res = yield call(checkRSA, str)
 			yield put ({ type: 'removeLoading' })
 
-  		if (true == res.result) {
+  		if (true == res.success) {
   			resultPayload.checkResult = true;
   		}
   		yield put ({type: 'setResult', payload: resultPayload})
